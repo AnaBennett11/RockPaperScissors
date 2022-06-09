@@ -1,17 +1,24 @@
 * {
-  border: red solid 1px
+  border: red solid 1px;
+  font-family: 'Quicksand', sans-serif;
+  color: white;
 }
 body {
   display: flex;
   flex-direction: row;
   height: 900px;
 }
+h1{
+  font-size: 75px;
+  margin: 0px;
+}
 .game-section {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   width: 60vw;
+  background-color: #A849B6;
 
 
 }
@@ -19,13 +26,14 @@ body {
 .box {
   height: 200px;
   width: 200px;
+  margin: none;
 }
 .hidden {
-  display: none;
+  display: none!important;
 }
 .choice {
-  height: 90px;
-  width: 90px;
+  height: 70px;
+
 }
 .image-section {
   display:flex;
@@ -35,4 +43,5 @@ body {
 }
 .human-section, .computer-section {
   width: 20vw;
+  background-color: #DF79EF;
 }
