@@ -1,0 +1,38 @@
+* {
+  border: red solid 1px
+}
+body {
+  display: flex;
+  flex-direction: row;
+  height: 900px;
+}
+.game-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 60vw;
+
+
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+}
+.hidden {
+  display: none;
+}
+.choice {
+  height: 90px;
+  width: 90px;
+}
+.image-section {
+  display:flex;
+  flex-direction: row;
+  height: 100px;
+  width:500px;
+}
+.human-section, .computer-section {
+  width: 20vw;
+}
