@@ -5,18 +5,18 @@
     <link rel="stylesheet" href="styles.css">
     <title>Rock, Paper, Scissors</title>
   </head>
-  <body>
+  <body class="main-section">
     <section class="human-section">
       <p>👩🏻</p>
       <h2>Human</h2>
-      <h3>Wins:0</h3>
-      <button class="change-button" type="change-game-button">Change Game?</button>
+      <h3>Wins: 0</h3>
+      <button class="change-button hidden" type="change-game-button">Change Game?</button>
     </section>
     <section class="game-section">
       <h1>Rock, Paper, Scissors</h1>
       <h3 class="choice">Choose your game</h3>
-      <h3 class="end-result">End Result</h3>
-        <section class="box" id="classicRules">
+      <h3 class="end-result hidden">End Result</h3>
+        <section class="box1" id="classicRules">
         <ul>
           <h2>🪨Classic✂️</h2>
           <li>rock > scissors</li>
@@ -24,7 +24,7 @@
           <li>scissors > paper</li>
         </ul>
       </section>
-      <section class="box" id="difficultRules">
+      <section class="box2" id="difficultRules">
         <ul>
           <h2>🦎Difficult👽</h2>
           <li>rock > scissors & lizard</li>
@@ -34,22 +34,24 @@
           <li>alien > scissors & rock</li>
         </ul>
       </section>
-      <section class="image-section">
-        <div class="classic-images">
-          <img class="choice" id="rock" src="./assets/happy-rocks.png" alt="happy rocks">
-          <img class="choice" id="paper" src="./assets/happy-paper.png" alt="happy paper">
-          <img class="choice" id="scissors" src="./assets/lines-scissors.png" alt="scissors">
+      <section class="image-section hidden">
+        <div class="classic-images hidden">
+          <img class="choice rock" id="rock" src="./assets/happy-rocks.png" alt="happy rocks">
+          <img class="choice paper" id="paper" src="./assets/happy-paper.png" alt="happy paper">
+          <img class="choice scissors" id="scissors" src="./assets/happy-scissors.png" alt="scissors">
         </div>
-        <div class="difficult-images">
-          <img class="choice" id="lizard" src="./assets/flat-lizard.png" alt="flat lizard">
-          <img class="choice" id="alien" src="./assets/happy-alien.png" alt="alien">
+        <div class="difficult-images hidden">
+          <img class="choice lizard" id="lizard" src="./assets/flat-lizard.png" alt="flat lizard">
+          <img class="choice alien" id="alien" src="./assets/happy-alien.png" alt="alien">
         </div>
+      </section>
+      <section class="players-choices hidden">
       </section>
     </section>
     <section class="computer-section">
       <p>💻</p>
       <h2>Computer</h2>
-      <h3>Wins:0</h3>
+      <h3>Wins: 0</h3>
     </section>
    <script type="text/javascript" src="player.js"></script>
    <script type="text/javascript" src="game.js"></script>

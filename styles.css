@@ -6,11 +6,16 @@
 body {
   display: flex;
   flex-direction: row;
-  height: 900px;
+  height: 740px;
 }
 h1{
   font-size: 75px;
   margin: 0px;
+
+}
+p {
+  width: 20px;
+  height: 20px;
 }
 .game-section {
   display: flex;
@@ -23,10 +28,22 @@ h1{
 
 }
 
-.box {
+
+.box1 {
   height: 200px;
   width: 200px;
   margin: none;
+  text-align: center;
+  background-color: purple;
+  border-radius: 25px;
+}
+.box2{
+  height: 250px;
+  width: 200px;
+  margin: none;
+  text-align: center;
+  background-color: purple;
+  border-radius: 25px;
 }
 .hidden {
   display: none!important;
