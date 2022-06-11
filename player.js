@@ -2,7 +2,8 @@ class Player {
   constructor(name, token) {
     this.name = name;
     this.token = token;
-    this.numOfWins = 0;
+    this.humanWins = 0;
+    this.computerWins = 0;
   }
     takeTurn(gameType) {
       if (gameType === "classic") {
@@ -14,8 +15,11 @@ class Player {
         return fighters[Math.floor(Math.random() * fighters.length)]
       }
     }
-
-    winsCounter() {
-      this.wins++;
+    
+    increaseHumanWins() {
+      this.humanWins++
+    }
+    increaseComputerWins() {
+      this.computerWins++
     }
   }

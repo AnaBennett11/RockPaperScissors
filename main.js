@@ -12,16 +12,19 @@ var scissorsImage = document.querySelector("#scissors");
 var playerChoices = document.querySelector(".players-choices")
 var box1 = document.querySelector(".placeholder1");
 var box2 = document.querySelector(".placeholder2");
+var humanWins = document.querySelector(".human-wins");
+var computerWins = document.querySelector(".computer-wins");
 
 
 
-// var player = new Player();
+var player = new Player();
 var game = "";
 
 
 
 window.addEventListener("load", displayPage);
 classicRules.addEventListener("click", playClassicGame);
+difficultRules.addEventListener("click", playDifficultGame);
 imageSection.addEventListener("click", function(e){
   if (e.target.classList.contains("rock")) {
     game.checkWinConditions("rock", game.player2.takeTurn(game.gameType));
@@ -50,8 +53,7 @@ imageSection.addEventListener("click", function(e){
   }
 });
 changeButton.addEventListener("click", changeGame);
-// paperImage.addEventListener("click",)
-// scissorsImage.addEventListener("click",)
+
 
 
 
@@ -76,17 +78,29 @@ function playClassicGame() {
   show(chosen);
   game.gameType = "classic";
   chosen.innerHTML = "<h3>Choose your fighter</h3>";
-
+}
+function playDifficultGame() {
+  hide(classicRules);
+  hide(difficultRules);
+  show(imageSection);
+  show(classicImages);
+  show(difficultImages);
+  show(changeButton);
+  show(chosen);
+  game.gameType = "difficult";
+  chosen.innerHTML = "<h3>Choose your fighter</h3>";
 }
 
-function rockChoice () {
-  game.checkWinConditions("rock", game.player2.takeTurn(game.gameType));
-  showWinner();
-}
-function paperChoice() {
-  game.checkWinConditions("paper", game.player2.takeTurn(game.gameType));
-  showWinner();
-}
+
+
+// function rockChoice () {
+//   game.checkWinConditions("rock", game.player2.takeTurn(game.gameType));
+//   showWinner();
+// }
+// function paperChoice() {
+//   game.checkWinConditions("paper", game.player2.takeTurn(game.gameType));
+//   showWinner();
+// }
 function showChoice () {
  show(playerChoices);
  hide(imageSection);
@@ -98,8 +112,12 @@ function showChoice () {
   show(chosen);
   if (game.winner === "Computer") {
     chosen.innerHTML = "<h3>Computer Won!</h3>";
+    player.increaseComputerWins();
+    computerWins.innerHTML = `<h3 class="computer-wins">Wins: ${player.computerWins}</h3>`
   } else if (game.winner === "Human") {
     chosen.innerHTML = "<h3>Human Won!</h3>";
+    player.increaseHumanWins();
+    humanWins.innerHTML = `<h3 class="human-wins">Wins: ${player.humanWins}</h3>`
   } else {
     chosen.innerHTML = "<h3>It's a draw!</h3>";
   }
