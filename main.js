@@ -1,7 +1,7 @@
 var changeButton = document.querySelector(".change-button");
 var classicRules = document.querySelector("#classicRules");
 var difficultRules = document.querySelector("#difficultRules");
-var choice = document.querySelector(".choice");
+var chosen = document.querySelector(".chosen");
 var endResult = document.querySelector(".end-result");
 var classicImages = document.querySelector(".classic-images");
 var difficultImages = document.querySelector(".difficult-images");
@@ -10,6 +10,9 @@ var rockImage = document.querySelector("#rock");
 var paperImage = document.querySelector("#paper");
 var scissorsImage = document.querySelector("#scissors");
 var playerChoices = document.querySelector(".players-choices")
+var box1 = document.querySelector(".placeholder1");
+var box2 = document.querySelector(".placeholder2");
+
 
 
 // var player = new Player();
@@ -23,11 +26,30 @@ imageSection.addEventListener("click", function(e){
   if (e.target.classList.contains("rock")) {
     game.checkWinConditions("rock", game.player2.takeTurn(game.gameType));
     showChoice();
-    setTimeout(showWinner, 2000);
-    // showWinner();
-
+    setTimeout(showWinner, 1000);
+  }
+  if (e.target.classList.contains("paper")) {
+    game.checkWinConditions("paper", game.player2.takeTurn(game.gameType));
+    showChoice();
+    setTimeout(showWinner, 1000);
+  }
+  if (e.target.classList.contains("scissors")) {
+    game.checkWinConditions("scissors", game.player2.takeTurn(game.gameType));
+    showChoice();
+    setTimeout(showWinner, 1000);
+  }
+  if (e.target.classList.contains("lizard")) {
+    game.checkWinConditions("lizard", game.player2.takeTurn(game.gameType));
+    showChoice();
+    setTimeout(showWinner, 1000);
+  }
+  if (e.target.classList.contains("alien")) {
+    game.checkWinConditions("alien", game.player2.takeTurn(game.gameType));
+    showChoice();
+    setTimeout(showWinner, 1000);
   }
 });
+changeButton.addEventListener("click", changeGame);
 // paperImage.addEventListener("click",)
 // scissorsImage.addEventListener("click",)
 
@@ -50,25 +72,47 @@ function playClassicGame() {
   hide(difficultRules);
   show(imageSection);
   show(classicImages);
-  hide(choice);
   show(changeButton);
+  show(chosen);
   game.gameType = "classic";
+  chosen.innerHTML = "<h3>Choose your fighter</h3>";
+
 }
 
 function rockChoice () {
   game.checkWinConditions("rock", game.player2.takeTurn(game.gameType));
   showWinner();
 }
+function paperChoice() {
+  game.checkWinConditions("paper", game.player2.takeTurn(game.gameType));
+  showWinner();
+}
 function showChoice () {
  show(playerChoices);
  hide(imageSection);
-//show two images and interpoloate a player choice and computer choice
-playerChoices.innerHTML +=
-  `<img class="choice ${game.humanChoice}" id="${game.humanChoice}" src="./assets/happy-${game.humanChoice}s.png" alt="happy ${game.humanChoice}s">
-  <img class="choice ${game.computerChoice}" id="${game.computerChoice}" src="./assets/happy-${game.computerChoice}.png" alt="happy ${game.computerChoice}">`
+ hide(chosen);
+ box1.innerHTML += `<img class="choice ${game.humanChoice}" id="${game.humanChoice}" src="./assets/happy-${game.humanChoice}.png" alt="happy ${game.humanChoice}">`;
+ box2.innerHTML += `<img class="choice ${game.computerChoice}" id="${game.computerChoice}" src="./assets/happy-${game.computerChoice}.png" alt="happy ${game.computerChoice}">`
 }
-function showWinner () {
-  //show a text of who wins, innerhtml of p tag that is determined based on the winner
-
-
+ function showWinner () {
+  show(chosen);
+  if (game.winner === "Computer") {
+    chosen.innerHTML = "<h3>Computer Won!</h3>";
+  } else if (game.winner === "Human") {
+    chosen.innerHTML = "<h3>Human Won!</h3>";
+  } else {
+    chosen.innerHTML = "<h3>It's a draw!</h3>";
   }
+}
+
+function changeGame () {
+  show(classicRules);
+  show(difficultRules);
+  hide(changeButton);
+  hide(imageSection);
+  show(chosen);
+  hide(playerChoices);
+  box1.innerHTML = "";
+  box2.innerHTML = "";
+  chosen.innerHTML = "<h3>Choose your game!</h3>";
+}
