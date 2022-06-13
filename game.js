@@ -8,12 +8,6 @@ class Game {
     this.computerChoice = "";
   }
 
-  gameStatus() {
-    //says no body has picked anything
-    //player1 Wins or player2 Wins
-    //its a draw
-    //holds each token what each player has
-  }
   checkWinConditions(playerChoice, computerChoice) {
     this.humanChoice = playerChoice;
     this.computerChoice = computerChoice;
@@ -33,12 +27,5 @@ class Game {
       this.winner = "Computer";
     }
     return this.winner;
-    // if (this.player1.token
-    //check to see if rock beats paper or whatever
-    //check to see if there is a draw
-    //then returns the winner
-  }
-  resetGameBoard(){
-    //empties the array for the gameboard
   }
 }

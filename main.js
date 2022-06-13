@@ -59,7 +59,7 @@ changeButton.addEventListener("click", changeGame);
 
 function displayPage() {
   game = new Game();
-}
+};
 
 function show(element) {
   element.classList.remove('hidden');
@@ -67,7 +67,7 @@ function show(element) {
 
 function hide(element) {
   element.classList.add('hidden');
-}
+};
 
 function playClassicGame() {
   hide(classicRules);
@@ -76,9 +76,11 @@ function playClassicGame() {
   show(classicImages);
   show(changeButton);
   show(chosen);
+  hide(difficultImages);
   game.gameType = "classic";
   chosen.innerHTML = "<h3>Choose your fighter</h3>";
-}
+};
+
 function playDifficultGame() {
   hide(classicRules);
   hide(difficultRules);
@@ -89,25 +91,16 @@ function playDifficultGame() {
   show(chosen);
   game.gameType = "difficult";
   chosen.innerHTML = "<h3>Choose your fighter</h3>";
-}
+};
 
-
-
-// function rockChoice () {
-//   game.checkWinConditions("rock", game.player2.takeTurn(game.gameType));
-//   showWinner();
-// }
-// function paperChoice() {
-//   game.checkWinConditions("paper", game.player2.takeTurn(game.gameType));
-//   showWinner();
-// }
 function showChoice () {
  show(playerChoices);
  hide(imageSection);
  hide(chosen);
  box1.innerHTML += `<img class="choice ${game.humanChoice}" id="${game.humanChoice}" src="./assets/happy-${game.humanChoice}.png" alt="happy ${game.humanChoice}">`;
  box2.innerHTML += `<img class="choice ${game.computerChoice}" id="${game.computerChoice}" src="./assets/happy-${game.computerChoice}.png" alt="happy ${game.computerChoice}">`
-}
+};
+
  function showWinner () {
   show(chosen);
   if (game.winner === "Computer") {
@@ -120,8 +113,8 @@ function showChoice () {
     humanWins.innerHTML = `<h3 class="human-wins">Wins: ${player.humanWins}</h3>`
   } else {
     chosen.innerHTML = "<h3>It's a draw!</h3>";
-  }
-}
+  };
+};
 
 function changeGame () {
   show(classicRules);

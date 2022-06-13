@@ -1,5 +1,4 @@
 * {
-  border: red solid 1px;
   font-family: 'Quicksand', sans-serif;
   color: white;
 }
@@ -13,10 +12,22 @@ h1{
   margin: 0px;
 
 }
-p {
-  width: 20px;
-  height: 20px;
+button {
+  align-items: center;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, .40);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px black;
+  height: 50px;
+  justify-content: center;
+  width: 200px;
+
 }
+button:hover {
+  background-color: #999;
+  color: #ffcc00;
+}
+
 .game-section {
   display: flex;
   flex-direction: column;
@@ -24,8 +35,6 @@ p {
   align-items: center;
   width: 60vw;
   background-color: #A849B6;
-
-
 }
 
 
@@ -36,29 +45,60 @@ p {
   text-align: center;
   background-color: purple;
   border-radius: 25px;
+  backdrop-filter: blur(5px);
+  box-shadow: 5px 5px 10px black;
 }
-.box2{
+.box2 {
   height: 250px;
   width: 200px;
   margin: none;
   text-align: center;
   background-color: purple;
   border-radius: 25px;
+  backdrop-filter: blur(5px);
+  box-shadow: 5px 5px 10px black;
 }
+
+.box1:hover {
+  background-color: #999;
+  color: #ffcc00;
+}
+
+.box2:hover {
+  background-color: #999;
+  color: #ffcc00;
+}
+
 .hidden {
   display: none!important;
 }
 .choice {
-  height: 70px;
-
+  height: 150px;
+  width: 150px;
 }
+
 .image-section {
   display:flex;
   flex-direction: row;
   height: 100px;
-  width:500px;
+  width: 100%;
+  justify-content: space-evenly;
 }
 .human-section, .computer-section {
   width: 20vw;
   background-color: #DF79EF;
+}
+.cute-computer {
+  height: 110px;
+  width: 200px;
+  box-shadow: 5px 5px 10px black;
+}
+.cute-human {
+  height: 200px;
+  width: 150px;
+  box-shadow: 5px 5px 10px black;
+}
+.lizard {
+  height:150px;
+  width: 200px;
 }
