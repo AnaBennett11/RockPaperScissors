@@ -13,6 +13,9 @@ A [Front-End Project] by: [Ana Bennett](https://github.com/AnaBennett11)
 - Rock, Paper, Scissors is a web application which presents the user with an option to play a classic game or a difficult game. The classic game consists of the three fighters - rock, paper, scissors. The difficult game consists of the the five fighters - rock, paper, scissors, alien, lizard.
 
 ## Functionality
+![Screen Shot 2022-06-14 at 11 52 40 AM](https://user-images.githubusercontent.com/98188684/173641165-89d2f42e-cd7b-44b6-b172-e233e36815ee.png)
+![Screen Shot 2022-06-14 at 11 53 15 AM](https://user-images.githubusercontent.com/98188684/173641234-f199aba3-62c8-4c51-a8c7-25b6121808d7.png)
+
 * Layout
     * Application built for desktop use
 
@@ -30,6 +33,7 @@ A [Front-End Project] by: [Ana Bennett](https://github.com/AnaBennett11)
 
 
 * Game Play - Difficult
+
     * Difficult game built with two additional fighters.
     * Computer generates a random fighter against the player.
     * Wins are incremented immediately and redisplayed for the user.
@@ -51,3 +55,4 @@ A [Front-End Project] by: [Ana Bennett](https://github.com/AnaBennett11)
 2. cd into repo from terminal
 3. open index.html from the terminal command line to launch index file
 4. OR just visit my deployed page [Rock Paper Scissors](https://github.com/AnaBennett11/RockPaperScissors)
+
