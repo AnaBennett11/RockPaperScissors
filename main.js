@@ -2,25 +2,16 @@ var changeButton = document.querySelector(".change-button");
 var classicRules = document.querySelector("#classicRules");
 var difficultRules = document.querySelector("#difficultRules");
 var chosen = document.querySelector(".chosen");
-var endResult = document.querySelector(".end-result");
 var classicImages = document.querySelector(".classic-images");
 var difficultImages = document.querySelector(".difficult-images");
 var imageSection = document.querySelector(".image-section");
-var rockImage = document.querySelector("#rock");
-var paperImage = document.querySelector("#paper");
-var scissorsImage = document.querySelector("#scissors");
 var playerChoices = document.querySelector(".players-choices")
 var box1 = document.querySelector(".placeholder1");
 var box2 = document.querySelector(".placeholder2");
 var humanWins = document.querySelector(".human-wins");
 var computerWins = document.querySelector(".computer-wins");
 
-
-
-var player = new Player();
 var game = "";
-
-
 
 window.addEventListener("load", displayPage);
 classicRules.addEventListener("click", playClassicGame);
@@ -53,8 +44,6 @@ imageSection.addEventListener("click", function(e){
   }
 });
 changeButton.addEventListener("click", changeGame);
-
-
 
 
 function displayPage() {
@@ -98,19 +87,19 @@ function showChoice () {
  hide(imageSection);
  hide(chosen);
  box1.innerHTML += `<img class="choice ${game.humanChoice}" id="${game.humanChoice}" src="./assets/happy-${game.humanChoice}.png" alt="happy ${game.humanChoice}">`;
- box2.innerHTML += `<img class="choice ${game.computerChoice}" id="${game.computerChoice}" src="./assets/happy-${game.computerChoice}.png" alt="happy ${game.computerChoice}">`
+ box2.innerHTML += `<img class="choice ${game.computerChoice}" id="${game.computerChoice}" src="./assets/happy-${game.computerChoice}.png" alt="happy ${game.computerChoice}">`;
 };
 
  function showWinner () {
   show(chosen);
   if (game.winner === "Computer") {
     chosen.innerHTML = "<h3>Computer Won!</h3>";
-    player.increaseComputerWins();
-    computerWins.innerHTML = `<h3 class="computer-wins">Wins: ${player.computerWins}</h3>`
+    game.player2.increaseComputerWins();
+    computerWins.innerHTML = `<h3 class="computer-wins">Wins: ${game.player2.computerWins}</h3>`
   } else if (game.winner === "Human") {
     chosen.innerHTML = "<h3>Human Won!</h3>";
-    player.increaseHumanWins();
-    humanWins.innerHTML = `<h3 class="human-wins">Wins: ${player.humanWins}</h3>`
+    game.player1.increaseHumanWins();
+    humanWins.innerHTML = `<h3 class="human-wins">Wins: ${game.player1.humanWins}</h3>`
   } else {
     chosen.innerHTML = "<h3>It's a draw!</h3>";
   };
@@ -126,4 +115,4 @@ function changeGame () {
   box1.innerHTML = "";
   box2.innerHTML = "";
   chosen.innerHTML = "<h3>Choose your game!</h3>";
-}
+};
