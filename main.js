@@ -20,27 +20,32 @@ imageSection.addEventListener("click", function(e){
   if (e.target.classList.contains("rock")) {
     game.checkWinConditions("rock", game.player2.takeTurn(game.gameType));
     showChoice();
-    setTimeout(showWinner, 1000);
+    showWinner();
+    setTimeout(showGameBoard, 1000);
   }
   if (e.target.classList.contains("paper")) {
     game.checkWinConditions("paper", game.player2.takeTurn(game.gameType));
     showChoice();
-    setTimeout(showWinner, 1000);
+    showWinner();
+    setTimeout(showGameBoard, 1000);
   }
   if (e.target.classList.contains("scissors")) {
     game.checkWinConditions("scissors", game.player2.takeTurn(game.gameType));
     showChoice();
-    setTimeout(showWinner, 1000);
+    showWinner();
+    setTimeout(showGameBoard, 1000);
   }
   if (e.target.classList.contains("lizard")) {
     game.checkWinConditions("lizard", game.player2.takeTurn(game.gameType));
     showChoice();
-    setTimeout(showWinner, 1000);
+    showWinner();
+    setTimeout(showGameBoard, 1000);
   }
   if (e.target.classList.contains("alien")) {
     game.checkWinConditions("alien", game.player2.takeTurn(game.gameType));
     showChoice();
-    setTimeout(showWinner, 1000);
+    showWinner();
+    setTimeout(showGameBoard, 1000);
   }
 });
 changeButton.addEventListener("click", changeGame);
@@ -86,8 +91,8 @@ function showChoice () {
  show(playerChoices);
  hide(imageSection);
  hide(chosen);
- box1.innerHTML += `<img class="choice ${game.humanChoice}" id="${game.humanChoice}" src="./assets/happy-${game.humanChoice}.png" alt="happy ${game.humanChoice}">`;
- box2.innerHTML += `<img class="choice ${game.computerChoice}" id="${game.computerChoice}" src="./assets/happy-${game.computerChoice}.png" alt="happy ${game.computerChoice}">`;
+ box1.innerHTML = `<img class="choice ${game.humanChoice}" id="${game.humanChoice}" src="./assets/happy-${game.humanChoice}.png" alt="happy ${game.humanChoice}">`;
+ box2.innerHTML = `<img class="choice ${game.computerChoice}" id="${game.computerChoice}" src="./assets/happy-${game.computerChoice}.png" alt="happy ${game.computerChoice}">`;
 };
 
  function showWinner () {
@@ -104,6 +109,15 @@ function showChoice () {
     chosen.innerHTML = "<h3>It's a draw!</h3>";
   };
 };
+
+function showGameBoard() {
+  hide(playerChoices);
+  if (game.gameType === "classic") {
+      playClassicGame();
+  } else {
+    playDifficultGame();
+  }
+}
 
 function changeGame () {
   show(classicRules);
