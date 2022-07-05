@@ -54,5 +54,5 @@ A [Front-End Project] by: [Ana Bennett](https://github.com/AnaBennett11)
 1. Clone this repo to your local machine.
 2. cd into repo from terminal
 3. open index.html from the terminal command line to launch index file
-4. OR just visit my deployed page [Rock Paper Scissors](https://github.com/AnaBennett11/RockPaperScissors)
+4. OR just visit my deployed page [Rock Paper Scissors](https://anabennett11.github.io/RockPaperScissors/)
 
